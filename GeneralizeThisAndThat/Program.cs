@@ -1,12 +1,6 @@
 ﻿using GeneralizeThisAndThat.ConvexHull;
-using GeneralizeThisAndThat.ConvexHull.GrahamScan;
-using GeneralizeThisAndThat.ConvexHull.GrahamScan.TurnCalculator;
-using GeneralizeThisAndThat.ConvexHull.GrahamScan.TurnCalculator.Impl;
 
-ITurnCalculator calc = new TurnCalculator();
-IConvexHullFinder finder = new GrahamScan(calc);
-
-finder.GetConvexHull(new List<Point2D>
+IConvexHullFinder.Instance.GetConvexHull(new List<Point2D>
     {
         new(0, 3),
         new(1, 1),
