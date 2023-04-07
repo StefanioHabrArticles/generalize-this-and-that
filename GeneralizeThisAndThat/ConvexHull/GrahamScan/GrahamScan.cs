@@ -9,7 +9,7 @@ public class GrahamScan : IConvexHullFinder
     public GrahamScan(ITurnCalculator calculator) =>
         _calculator = calculator;
 
-    public IEnumerable<Point2D<TRing>>? GetConvexHull<TRing>(IList<Point2D<TRing>>? points)
+    public ConvexHull<TRing>? GetConvexHull<TRing>(IList<Point2D<TRing>>? points)
         where TRing :
         IComparable<TRing>,
         IAdditionOperators<TRing, TRing, TRing>,
@@ -37,6 +37,6 @@ public class GrahamScan : IConvexHullFinder
             hull.Push(points[i]);
         }
 
-        return hull;
+        return new ConvexHull<TRing>(hull, _calculator);
     }
 }
