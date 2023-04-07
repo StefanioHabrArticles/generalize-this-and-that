@@ -1,4 +1,10 @@
-﻿using GeneralizeThisAndThat.ConvexHull;
+﻿using GeneralizeThisAndThat.Algebra;
+using GeneralizeThisAndThat.ConvexHull;
+
+Func<int, int> squareFunc = i => i * i;
+Func<int, int> doubleIntFunc = i => i * 2;
+Endomorphism<int> doubleInt = doubleIntFunc;
+Console.WriteLine((doubleInt * doubleInt + squareFunc).At(3));
 
 IConvexHullFinder.Instance.GetConvexHull(new List<Point2D<int>>
     {
