@@ -3,9 +3,7 @@ using System.Numerics;
 namespace GeneralizeThisAndThat.Algebra;
 
 public interface IRing<T> :
-    IAdditionOperators<T, T, T>,
-    IAdditiveIdentity<T, T>,
-    IUnaryNegationOperators<T, T>,
+    IGroup<T>,
     IMultiplyOperators<T, T, T>,
     IMultiplicativeIdentity<T, T>
     where T :
