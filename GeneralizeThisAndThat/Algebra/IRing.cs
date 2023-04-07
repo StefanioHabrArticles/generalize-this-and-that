@@ -1,15 +1,18 @@
+using System.Numerics;
+
 namespace GeneralizeThisAndThat.Algebra;
 
-public interface IRing<T>
-    where T : IRing<T>
+public interface IRing<T> :
+    IAdditionOperators<T, T, T>,
+    IAdditiveIdentity<T, T>,
+    IUnaryNegationOperators<T, T>,
+    IMultiplyOperators<T, T, T>,
+    IMultiplicativeIdentity<T, T>
+    where T :
+    IAdditionOperators<T, T, T>?,
+    IAdditiveIdentity<T, T>?,
+    IUnaryNegationOperators<T, T>?,
+    IMultiplyOperators<T, T, T>?,
+    IMultiplicativeIdentity<T, T>?
 {
-    static abstract T operator +(T x, T y);
-    
-    static abstract T Zero { get; }
-    
-    static abstract T operator -(T x);
-
-    static abstract T operator *(T x, T y);
-    
-    static abstract T One { get; }
 }
