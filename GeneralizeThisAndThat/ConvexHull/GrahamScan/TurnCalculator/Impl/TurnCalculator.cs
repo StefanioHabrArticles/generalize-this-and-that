@@ -7,6 +7,7 @@ public class TurnCalculator : ITurnCalculator
         var crossProduct =
             (p2.X - p1.X) * (p3.Y - p1.Y) -
             (p2.Y - p1.Y) * (p3.X - p1.X);
+
         return crossProduct switch
         {
             < 0 => Turn.ClockWise,
