@@ -4,7 +4,7 @@ namespace GeneralizeThisAndThat.ConvexHull;
 
 public interface IConvexHullFinder
 {
-    IEnumerable<Point2D<TRing>>? GetConvexHull<TRing>(IList<Point2D<TRing>>? points)
+    ConvexHull<TRing>? GetConvexHull<TRing>(IList<Point2D<TRing>>? points)
         where TRing :
         IComparable<TRing>,
         IAdditionOperators<TRing, TRing, TRing>,
