@@ -1,5 +1,3 @@
-using System.Numerics;
-
 namespace GeneralizeThisAndThat.Algebra;
 
 public interface IRing<T> :

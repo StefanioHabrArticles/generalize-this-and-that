@@ -4,7 +4,14 @@ namespace GeneralizeThisAndThat.ConvexHull;
 
 public interface IConvexHullFinder
 {
-    IEnumerable<Point2D>? GetConvexHull(IList<Point2D>? points);
+    IEnumerable<Point2D<TRing>>? GetConvexHull<TRing>(IList<Point2D<TRing>>? points)
+        where TRing :
+        IComparable<TRing>,
+        IAdditionOperators<TRing, TRing, TRing>,
+        IAdditiveIdentity<TRing, TRing>,
+        IUnaryNegationOperators<TRing, TRing>,
+        IMultiplyOperators<TRing, TRing, TRing>,
+        IMultiplicativeIdentity<TRing, TRing>;
 
     public static IConvexHullFinder Instance =>
         new GrahamScan.GrahamScan(
