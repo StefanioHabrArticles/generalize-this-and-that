@@ -1,6 +1,6 @@
 ﻿using GeneralizeThisAndThat.ConvexHull;
 
-IConvexHullFinder.Instance.GetConvexHull(new List<Point2D>
+IConvexHullFinder.Instance.GetConvexHull(new List<Point2D<int>>
     {
         new(0, 3),
         new(1, 1),
