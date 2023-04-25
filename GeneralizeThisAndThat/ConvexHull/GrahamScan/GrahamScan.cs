@@ -21,7 +21,7 @@ public class GrahamScan : IConvexHullFinder
         if (points is null or { Count: < 3 })
             return null;
 
-        var p0 = points.OrderBy(p => p.Y).ThenBy(p => p.Y).First();
+        var p0 = points.OrderBy(p => p.X).ThenBy(p => p.Y).First();
         points = points.OrderBy(p => p, new PolarOrderComparer<TRing>(p0)).ToList();
 
         var hull = new Stack<Point2D<TRing>>();
