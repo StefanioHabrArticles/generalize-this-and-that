@@ -13,7 +13,7 @@ public record Point2D<TRing>(TRing X, TRing Y)
         new(p1.X + -p2.X, p1.Y + -p2.Y);
 
     public static TRing operator *(Point2D<TRing> p1, Point2D<TRing> p2) =>
-        p1.X * p2.X + p1.Y * p1.Y;
+        p1.X * p2.X + p1.Y * p2.Y;
 
     public static TRing operator ^(Point2D<TRing> p1, Point2D<TRing> p2) =>
         p1.X * p2.Y + -(p1.Y * p2.X);
